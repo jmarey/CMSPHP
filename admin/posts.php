@@ -19,36 +19,45 @@
                             <small>Author</small>
                         </h1>
                         
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Image</th>
-                                    <th>Tags</th>
-                                    <th>Comments</th>
-                                    <th>Date</th>
-                                    
-                                </tr>
-                            </thead>
+                        <?php
+                        
+                        if(isset($_GET['source'])) {
+                        
+                            $source = $_GET['source'];
+                            
+                        } else {
+                            
+                            $source = "";
+                            
+                        }
+                        
+                        switch($source) {
+                                
+                            case '34';
+                            echo "NICE 34";    
+                            break;    
+                                
+                            case '100';
+                            echo "NICE 100";    
+                            break;    
 
-                            <tbody>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Edwin Diaz</td>
-                                    <td>Bootstrap Framework</td>
-                                    <td>Bootstrap</td>
-                                    <td>Status</td>
-                                    <td>Image</td>
-                                    <td>Tags</td>
-                                    <td>Comments</td>
-                                    <td>Date</td>
-                                </tr>
-                            </tbody>
-                        </table>                        
+                            case '200';
+                            echo "NICE 200";    
+                            break;    
+                                
+                            default:
+                                
+                                include "includes/view_all_posts.php";
+                                
+                            break;    
+                                
+                        }
+            
+    
+    
+                        ?>
+                        
+                       
                         
                     </div>
                 </div>
